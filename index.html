@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork #2</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body> 
+    <div id="box"> </div>          
+   
+    <script>
+       console.log('Задача №1');
+    var arr=['Hello', 'Oranges', 'Age','Housewife'];   
+    var lmax=arr[0].length;
+    var elarr="";   
+    for(var i in arr)
+    {                      
+        if(arr[i].length>lmax){
+        lmax=arr[i].length;
+        elarr=arr[i];
+        }             
+    }
+    console.log(`Самое длинное слово в массиве: ${elarr}`);
+    arr.length=0;
+    for(var el of elarr){
+      arr.push(el);
+    }
+   console.log(arr);
+   //Задача 2
+var myText=prompt("Задача2\nВведите текст:");
+var myColor=prompt("Введите цвет текста:");
+var myFontSize=+prompt("Введите размер шрифта:");
+marker(myText,myColor,myFontSize);
+ //Задача 3
+
+var arr3=[];
+arr3.push(prompt('Задача3\nВведите путь к изображению:'));
+while(true){
+        if(confirm('Хотите ли вы ввести путь к изображению?'))
+        {
+            arr3.push(prompt('Введите путь к изображению:'));           
+        }            
+        else      
+        break;
+    }    
+     placeImages(arr3);
+
+
+
+
+
+
+
+/*функция принимает текст, цвет, размер текста и выводит текст
+c заданным размером и цветом*/
+function marker(text,color,numb){
+document.write
+(
+ `<p style="color:${color};font-size:${numb}px;" >${text}</p>`
+)
+}
+/*Функция принимает массив строк, являющихся путями к изображениям
+после чего добавляет все эти изображения в с div*/
+function placeImages(arrayImages){
+    for (var el of arrayImages){
+       box.innerHTML+=
+       `<div class="adddiv"><img src="${el}""></div>`
+    }   
+}
+    
+
+    </script>
+    
+</body>
+</html>
